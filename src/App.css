@@ -4,3 +4,16 @@
   padding: 2rem;
   text-align: center;
 }
+
+nav {
+  display: flex;
+
+  justify-content: space-around;
+  padding: 1rem;
+
+}
+
+nav>div {
+  display: flex;
+
+}

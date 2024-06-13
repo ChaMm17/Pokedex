@@ -2,17 +2,13 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import PokemonCard from './components/PokemonCard'
+import NavBar from './components/NavBar'
+
 import './App.css'
 
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
-  const handleClickNext = () => {
-    setPokemonIndex(pokemonIndex + 1)
-  }
-  const handleClickPrevious = () => {
-    setPokemonIndex(pokemonIndex - 1)
-  }
 
   const pokemonList = [
     {
@@ -40,23 +36,21 @@ function App() {
     },
   ];
 
-  return (
+  return (<>
+    <nav>
+      <div>
+        <NavBar
+          pokemonList={pokemonList}
+          pokemonIndex={pokemonIndex}
+          setPokemonIndex={setPokemonIndex}
+        />
+      </div>
+
+    </nav>
     <div>
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-      {pokemonIndex > 0
-        ?
-        <button onClick={handleClickPrevious}>Précédent</button>
-        :
-        <p></p>
-      }
-      {pokemonIndex < pokemonList.length - 1
-        ?
-        < button onClick={handleClickNext}>Suivant</button>
-        :
-        <p></p>
-      }
-    </div >
-  )
+    </div>
+  </>);
 }
 
 export default App
