@@ -7,13 +7,22 @@
 
 nav {
   display: flex;
-
   justify-content: space-around;
   padding: 1rem;
+
 
 }
 
 nav>div {
   display: flex;
 
+}
+
+.Pokemon_buttons {
+  display: flex;
+  background-color: lightblue;
+  flex-direction: row;
+  padding: 1rem;
+  gap: 2rem;
+  list-style: none;
 }
